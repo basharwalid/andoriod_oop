@@ -1,12 +1,21 @@
+package Person;
+
 import java.util.ArrayList;
 public class Student extends Person {
+    int numberOfCourses;
+    ArrayList<String> courses ;
+    ArrayList<Integer> grades;
+    Student(){
+        super();
+        numberOfCourses = 0;
+        courses = new ArrayList<String>();
+        grades = new  ArrayList<Integer>();
+    }
 
     Student(String name , String address){
-
+        super(name , address);
     }
-    int numberOfCourses = 0;
-    ArrayList<String> courses = new ArrayList<>();
-    ArrayList<Integer> grades = new ArrayList<>();
+
 
     void addCourseGrade(String course , int grade){
         for(int i =0; i<courses.size(); i++){
@@ -30,4 +39,8 @@ public class Student extends Person {
         }
         return sum/grades.size();
     }
+    public String toString(){
+        return  "Student "+getName()+ " Address : "+getAddress();
+    }
+
 }
